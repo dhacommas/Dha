@@ -10,3 +10,9 @@ jobs:
       with:
         name: Debug APK
         path: app/build/outputs/apk/debug/app-debug.apk
+        
+    - uses: appleboy/telegram-action@master
+      with:
+        to: ${{ secrets.TELEGRAM_TO }}
+        token: ${{ secrets.TELEGRAM_TOKEN }}
+        document: ./app/build/outputs/apk/debug/app-debug.apk
